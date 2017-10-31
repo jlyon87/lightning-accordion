@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="ClickedAccordionItem" >
+	<aura:attribute name="itemName" type="String" />
+</aura:event>

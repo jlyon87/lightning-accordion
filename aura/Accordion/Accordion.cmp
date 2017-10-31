@@ -1,0 +1,10 @@
+<aura:component description="Accordion" >
+
+	<aura:attribute name="accordionItems" type="Aura.Component[]" />
+
+	<ul class="slds-accordion">
+
+		{!v.accordionItems}
+
+	</ul>
+</aura:component>

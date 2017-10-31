@@ -1,0 +1,40 @@
+<aura:component description="AccordionItem" >
+
+	<aura:attribute name="title" type="String" />
+	<aura:attribute name="content" type="Aura.Component[]" />
+	<aura:attribute name="iterationIndex" type="String" required="true" description="The AuraIteration Index"/>
+
+	<aura:attribute name="isExpanded" type="Boolean" default="false" />
+
+	<aura:registerEvent name="clickedItem" type="c:ClickedAccordionItem" />
+	<aura:handler event="c:ClickedAccordionItem" action="{!c.handleClickedItem}" />
+
+	<li class="slds-accordion__list-item">
+		<section aura:id="itemSection" class="slds-accordion__section">
+			<div class="slds-accordion__summary">
+				<h3 class="slds-text-heading_small slds-accordion__summary-heading">
+					<button
+						aria-controls="accordion-details-01"
+						aria-expanded="true"
+						class="slds-button slds-button_reset slds-accordion__summary-action"
+						onclick="{!c.clickSection}">
+
+						<lightning:icon class="slds-accordion__summary-action-icon"
+							iconName="utility:switch"
+							size="x-small"
+							alternativeText="chevron" />
+
+						<span class="slds-p-left_small slds-truncate">
+							<ui:outputText value="{!v.title}" />
+						</span>
+					</button>
+				</h3>
+			</div>
+			<div aria-hidden="false" class="slds-accordion__content" id="accordion-details-01">
+
+				{!v.content}
+
+			</div>
+		</section>
+	</li>
+</aura:component>
