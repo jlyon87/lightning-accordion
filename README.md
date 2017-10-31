@@ -6,6 +6,8 @@ I needed a Lightning Accordion that worked in API v39. So I made this. Using the
 
 Add the two Lightning Component Bundles and the Event from this repo to your Salesforce Org.
 
+In your component, pass in your array of data to the Accordion and AccordionItems like so:
+
 ```html
 <c:Accordion >
 
